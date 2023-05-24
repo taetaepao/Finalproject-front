@@ -41,14 +41,14 @@
   color: rgb(0, 0, 0);
 }
 
-.result{
+.result {
   text-align: center;
   width: 100%;
   height: 50vh;
   overflow: hidden;
   /* border : 1px solid rgb(255, 0, 128); */
 }
-.subresult{
+.subresult {
   width: 100%;
   height: 50vh;
   overflow: hidden;
@@ -58,8 +58,8 @@
 
 .details {
   margin: 30px auto;
-  font-size : 20px;
-  font-weight : 700;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .weather-stats {
@@ -78,7 +78,6 @@
   background-color: rgb(255, 255, 255);
   /* border : 1px solid rgb(28, 1, 151) */
 }
-
 
 * {
   margin: 0;
@@ -113,16 +112,22 @@ body {
 button {
   display: grid;
   grid-auto-flow: column;
-  grid-gap: .5em;
-  border: solid .25em transparent;
+  grid-gap: 0.5em;
+  border: solid 0.25em transparent;
   padding: 0.1em 0.5em;
   border-radius: 9em;
-  background: 
-    linear-gradient(to right bottom, var(--slist)) 
-      border-box;
+  background: linear-gradient(to right bottom, var(--slist)) border-box;
   font: 500 2em "Kanit", sans-serif;
   text-transform: uppercase;
-  
-  &::after { content: attr(data-ico) }
-  cursor:pointer;
+
+  &::after {
+    content: attr(data-ico);
+  }
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(to right bottom, var(--slist)) border-box;
+  color: #fff;
+  /* color: rgb(255, 208, 19); */
 }

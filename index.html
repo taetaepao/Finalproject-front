@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload=getData() >
+  <body onload=onLoadFunctions() >
     <main class="table">
       <div class="result">
         <div class="supbox">
-          <button data-ico="↻" style="--slist: #ffda5f, #f9376b"onClick="getData()">
+          <button data-ico="↻" style="--slist: #ffda5f, #f9376b"onClick="updateFunctions()">
         </div>
         <img id="imgid" width=20% class="center">
         <p class="p1"><span id="result"></span></p>
@@ -26,7 +26,7 @@
             <div class="supbox">
               <p class="p2"><span id="hum"></span>%</p>
             </div>
-            <canvas class="humidity"></canvas>
+            <canvas id="humidity"></canvas>
           </div>
           <div class="details">
             <ul>humidity</ul>
@@ -38,7 +38,7 @@
             <div class="supbox">
               <p class="p2"><span id="tem"></span>°C</p>
             </div>
-            <canvas class="temperature"></canvas>
+            <canvas id="temperature"></canvas>
           </div>
           <div class="details">
             <ul>temperature</ul>
@@ -49,7 +49,7 @@
         
       </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1"></script>
     <script src="main.js"></script>
 
     </main>

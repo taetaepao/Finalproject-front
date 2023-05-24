@@ -22,10 +22,8 @@ const getData = async () => {
   await fetch(`http://127.0.0.1:3000/data`,options)
       .then((response) => response.json())
       .then((data) => {
-        document.getElementById("lig").innerHTML = parseInt(data.dataTable.light/50);
         document.getElementById("tem").innerHTML = parseInt(data.dataTable.temp);
         document.getElementById("hum").innerHTML = parseInt(data.dataTable.humidity);
-        var lig = data.dataTable.light/50;
         var tem = data.dataTable.temp;
         var hum = data.dataTable.humidity;
         new Chart(humidity  , {
@@ -71,33 +69,22 @@ const getData = async () => {
             },
           },
         });
-        
-        new Chart(light  , {
-          type: "doughnut",
-          data: {
-            labels: ['Red'],
-            datasets: [{
-              label: '# of Votes',
-              data: [lig,3000-lig],
-              borderRadius: 10,
-              borderWidth: 10
-            }]
-          },
-          options: {
-            events: [],
-            // borderWidth: 0,
-            // borderRadius: 0,
-            // hoverBorderWidth: 0,
-            backgroundColor: ['#CDCE8F','#FFFF'],
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-          },
-        });
 
-        document.getElementById("imgid").src="images/sun.png";
+        if(tem>40&&hum<50&&hum>30){
+          document.getElementById("imgid").src="images/sun.png";
+          document.getElementById("result").innerHTML = "ไปตากผ้าตอนนี้เลย";
+          document.getElementById("result").style.color= "green";
+        }
+        else if((tem>40)||(hum<50&&hum>30)){
+          document.getElementById("imgid").src="images/cloudy.png";
+          document.getElementById("result").innerHTML = "อยากตากก็ตากได้นะ";
+          document.getElementById("result").style.color= "blue";
+        }
+        else{
+          document.getElementById("imgid").src="images/storm.png";
+          document.getElementById("result").innerHTML = "ตากไปก็ไม่แห้ง";
+          document.getElementById("result").style.color= "red";
+        }
       })
       .catch((error) => console.error(error));
 };

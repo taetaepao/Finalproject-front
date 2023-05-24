@@ -11,10 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload=initPage() >
+  <body onload=getData() >
     <main class="table">
       <div class="result">
-        <img src="images/sun.png" width=20% class="center">
+        <div class="supbox">
+          <button data-ico="↻" style="--slist: #ffda5f, #f9376b"onClick="getData()">
+        </div>
+        <img id="imgid" width=20% class="center">
         <p class="p1">ไปตากตอนนี้เลย</p>
       </div>
       <div class="subresult">

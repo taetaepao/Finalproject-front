@@ -16,7 +16,8 @@
   width: 100px;
   /* border : 1px solid red; */
   margin-top: 8%;
-  margin-left: 5%;
+  margin-left: 4.5%;
+  text-align: center;
 }
 
 .center {
@@ -107,4 +108,21 @@ body {
   border-radius: 0.8rem;
 
   overflow: hidden;
+}
+
+button {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: .5em;
+  border: solid .25em transparent;
+  padding: 0.1em 0.5em;
+  border-radius: 9em;
+  background: 
+    linear-gradient(to right bottom, var(--slist)) 
+      border-box;
+  font: 500 2em "Kanit", sans-serif;
+  text-transform: uppercase;
+  
+  &::after { content: attr(data-ico) }
+  cursor:pointer;
 }
